@@ -1,5 +1,5 @@
-# note-angular2
-Learning note of angular2 framework
+# Note: Angular2
+This is a learning note of angular2 framework
 ### Agenda
 * [Structure](#structure)<br>
 * [Settings](#settings)<br>
