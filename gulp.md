@@ -1,5 +1,5 @@
 # Note: gulp
-Gulp is a streaming build system of javascript. It does help on automating tasks in web development.
+Gulp is a streaming build system of javascript. It does help on automating tasks in web development.<br>
 There are some notes of gulp cli and api.
 
 ### Agenda
