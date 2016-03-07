@@ -1,20 +1,25 @@
 # Note: gulp
 There are some notes of gulp cli and api.
 ### Agenda
-* [Intallation](#installation)<br>
-* [API](#api)<br>
-* [CLI](#cli)<br>
+* [Intallation](#installation)
+* [API](#api)
+  * [gulp.src](#gulpsrc)
+  * [gulp.dest](#gulpdest)
+  * [gulp.task](#gulptask)
+  * [gulp.watch](#gulpwatch)
+* [CLI](#cli)
 
 ### Installation
-1. Install gulp-cli;
+- Install gulp-cli: 
 ```
 $ npm install --global gulp-cli
 ```
-2. Install gulp in project;
+- Install gulp in project
 ```
 $ npm install --save-dev gulp
 ```
-3. Configure gulpfile.js in root of project;
+
+- Configure gulpfile.js in root of project
 ```
 var gulp = require('gulp');
 gulp.task('default', function() {
@@ -64,7 +69,8 @@ watcher.on('change', function(event) {
 });
 ```
 
-### CLI //copy and paste
+### CLI
+//copy and paste
 gulp has very few flags to know about. All other flags are for tasks to use if needed.
 
 - `-v` or `--version` will display the global and local gulp versions
