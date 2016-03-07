@@ -1,8 +1,8 @@
 # Note: javascript
 Here are some notes and tricks of javascript.
 ### Agenda
-* [Global](#Global)<br>
-* [Hoist](#Hoist)<br>
+* [Global](#global)<br>
+* [Hoist](#hoist)<br>
 
 ### Global
 * Everything outside a function is global to the whole window;
