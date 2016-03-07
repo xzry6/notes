@@ -8,7 +8,7 @@ There are some notes of gulp cli and api.
   * [gulp.task](#gulptask)
   * [gulp.watch](#gulpwatch)
 * [CLI](#cli)
-* [Writing a Plugin](https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/README.md#whatitdoes)
+* [Writing a Plugin](https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/README.md)
 
 ### Installation
 - Install gulp-cli: 
