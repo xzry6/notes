@@ -1,7 +1,7 @@
 # Note: gulp
-There are some notes of gulp cli and api.
-### Abstract
 Gulp is a streaming build system of javascript. It does help on automating tasks in web development.
+There are some notes of gulp cli and api.
+
 ### Agenda
 * [Intallation](#installation)
 * [API](#api)
