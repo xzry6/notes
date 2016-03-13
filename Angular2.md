@@ -1,15 +1,16 @@
 # Note: Angular2
 This is a learning note of angular2 framework
 ### Agenda
-* [Structure](#structure)<br>
-* [Settings](#settings)<br>
-  * [package.json](#packagejson)<br>
-  * [tsconfig.json](#tsconfigjson)<br>
-  * [typings.json](#typingsjson)<br>
-* [Details](#details)<br>
-  * [index.html](#indexhtml)<br>
-  * [app/main.ts](#maints)<br>
-  * [app/*.component.ts](#componentts)<br>
+* [Structure](#structure)
+* [Settings](#settings)
+  * [package.json](#packagejson)
+  * [tsconfig.json](#tsconfigjson)
+  * [typings.json](#typingsjson)
+* [Details](#details)
+  * [index.html](#indexhtml)
+  * [app/main.ts](#maints)
+  * [app/*.component.ts](#componentts)
+  * [app/*.service.ts](#servicets)
 
 ### Structure
 * a regular angular2 app
@@ -169,4 +170,39 @@ inputs: ['hero']
 Imported component should be listed.
 ```
 directives: [HeroDetailComponent]
+```
+#### *.service.ts
+Service connects models and components.<br>
+Import 'Injectable' decorator in your service.
+```
+import {Injectable} from 'angular2/core';
+@Injectable()
+export class HeroService { }
+```
+Import and provide your service in the component.
+```
+import {HeroService} from './hero.service';
+```
+```
+@Component({
+ providers: [HeroService]
+)}
+```
+User a constructor to declare the service.
+```
+constructor(private _heroService: HeroService) { }
+```
+Inject the service.
+```
+this.heroes = this._heroService.getHeroes();
+```
+We can use Promise in service methods.
+```
+getHeroes() {
+  return Promise.resolve(HEROES);
+}
+```
+And inject service in this way.
+```
+this._heroService.getHeroes().then(heroes => this.heroes = heroes);
 ```
