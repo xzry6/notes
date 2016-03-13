@@ -6,11 +6,17 @@ This is a learning note of angular2 framework
   * [package.json](#packagejson)
   * [tsconfig.json](#tsconfigjson)
   * [typings.json](#typingsjson)
-* [Details](#details)
+* [MVVM](#mvvm)
   * [index.html](#indexhtml)
   * [app/main.ts](#maints)
+  * [app/*.ts](#ts)
   * [app/*.component.ts](#componentts)
   * [app/*.service.ts](#servicets)
+* [*NEW* Router](#router)
+  * [RouteConfig](#routeconfig)
+  * [ROUTER_PROVIDERS](#routerproviders)
+  * [ROUTER_DIRECTIVES](#routerdirectives)
+  * [Location](#location)
 
 ### Structure
 * a regular angular2 app
@@ -88,7 +94,7 @@ Settings of type script definitions.
   }
 }
 ```
-### Details
+### MVVM
 #### index.html
 When an angular2 app is started, index.html in main menu is loaded. In the index.html, please include introduced .css and .js file.
 ```
@@ -132,6 +138,14 @@ import {HeroDetailComponent}  from './hero-detail.component'
 
 bootstrap(AppComponent);
 bootstrap(HeroDetailComponent);
+```
+#### *.ts
+Create an interface or a model.
+```
+export interface Hero {
+  id: number;
+  name: string;
+}
 ```
 #### *.component.ts
 Related components should be imported first.
@@ -205,4 +219,159 @@ getHeroes() {
 And inject service in this way.
 ```
 this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+```
+
+### Router
+In current version, Angular2 uses router to navigate from one view to the next.<br>
+Here is the structure of route in Angular2.
+![RouterStructure](http://52.8.152.237/sean/wp-content/uploads/2016/03/router.png)
+##### RouteConfig
+Use RouteConfig to define route.
+```
+import {RouteConfig, Route} from 'angular2/router';
+ 
+@RouteConfig([
+  new Route({path: '/home', component: HomeCmp, name: 'HomeCmp' })
+])
+
+class MyApp {}
+```
+RouteConfig construct a RouteDefinition class.
+```
+@CONST()
+export class RouteConfig {
+  constructor(public configs: RouteDefinition[]) {}
+}
+```
+RouteDefinition interface in route_definition.ts
+```
+export interface RouteDefinition {
+  path?: string;
+  aux?: string;
+  regex?: string;
+  serializer?: RegexSerializer;
+  component?: Type | ComponentDefinition;
+  loader?: () => Promise<Type>;
+  redirectTo?: any[];
+  as?: string;
+  name?: string;
+  data?: any;
+  useAsDefault?: boolean;
+}
+```
+##### ROUTER_PROVIDERS
+ROUTER_PROVIDERS gives a list of Providers. ROUTER_PROVIDERS must be included in the app or bootstrapped.<br>
+```
+import {ROUTER_PROVIDERS} from 'angular2/router';
+import {AppCmp} from './app.component';
+
+bootstrap(AppCmp, [ROUTER_PROVIDERS]);
+```
+ROUTER_PROVIDERS import a ROUTER_PROVIDERS_COMMON class as below.
+```
+export const ROUTER_PROVIDERS_COMMON: any[] = CONST_EXPR([
+  RouteRegistry,
+  CONST_EXPR(new Provider(LocationStrategy, {useClass: PathLocationStrategy})),
+  Location,
+  CONST_EXPR(new Provider(
+      Router,
+      {
+        useFactory: routerFactory,
+        deps: CONST_EXPR([RouteRegistry, Location, ROUTER_PRIMARY_COMPONENT, ApplicationRef])
+      })),
+  CONST_EXPR(new Provider(
+      ROUTER_PRIMARY_COMPONENT,
+      {useFactory: routerPrimaryComponentFactory, deps: CONST_EXPR([ApplicationRef])}))
+]);
+```
+##### ROUTER_DIRECTIVES
+RouterLink and RouterOutlet are included in ROUTER_DIRECTIVES. RouterLink navigates user to the view while RouterOutlet shows the view in the page.<br>
+Use RouterLink in the following way.
+```
+import {ROUTER_DIRECTIVES} from 'angular2/router';
+```
+```
+<a [routerLink]="['./User']">link to user component</a>
+```
+RouteLink calls Instruction to navagate.
+```
+private _navigationInstruction: Instruction;
+
+  constructor(private _router: Router, private _location: Location) {
+    // we need to update the link whenever a route changes to account for aux routes
+    this._router.subscribe((_) => this._updateLink());
+  }
+
+  // because auxiliary links take existing primary and auxiliary routes into account,
+  // we need to update the link whenever params or other routes change.
+  private _updateLink(): void {
+    this._navigationInstruction = this._router.generate(this._routeParams);
+    var navigationHref = this._navigationInstruction.toLinkUrl();
+    this.visibleHref = this._location.prepareExternalUrl(navigationHref);
+  }
+```
+RouteOutlet is used as a tag in views.
+```
+<router-outlet></router-outlet>
+```
+
+##### Location
+Location is a service that applications can use to interact with a browser's URL.
+```
+import {Location} from 'angular2/router';
+```
+```
+class AppCmp {
+  constructor(location: Location) {
+    location.go('/foo');
+  }
+}
+```
+Location derives from LocationStrategy.
+```
+constructor(public platformStrategy: LocationStrategy) {
+  var browserBaseHref = this.platformStrategy.getBaseHref();
+  this._baseHref = stripTrailingSlash(stripIndexHtml(browserBaseHref));
+  this.platformStrategy.onPopState((ev) => {
+    ObservableWrapper.callEmit(this._subject, {'url': this.path(), 'pop': true, 'type': ev.type});
+  });
+}
+```
+LocationStrategy represents route state. Angular2 provides two strategies: HashLocationStrategy PathLocationStrategy(default).<br>
+* HashLocationStrategy: http://example.com#/foo
+* PathLocationStrategy: http://example.com/foo
+<br>
+Provide a provider to a string URL prefix in PathLocationStrategy.
+```
+bootstrap(AppCmp, [
+  ROUTER_PROVIDERS,
+  provide(APP_BASE_HREF, {useValue: '/my/app'})
+]);
+```
+When using HashLocationStrategy.
+```
+bootstrap(AppCmp, [
+  ROUTER_PROVIDERS,
+  provide(LocationStrategy, {useClass: HashLocationStrategy})
+]);
+```
+LocationStrategy uses PlatformLocation to encapsulate calls to DOM apis. PlatformLocation has following structure.
+```
+export abstract class PlatformLocation {
+  abstract getBaseHrefFromDOM(): string;
+  abstract onPopState(fn: UrlChangeListener): void;
+  abstract onHashChange(fn: UrlChangeListener): void;
+
+  /* abstract */ get pathname(): string { return null; }
+  /* abstract */ get search(): string { return null; }
+  /* abstract */ get hash(): string { return null; }
+
+  abstract replaceState(state: any, title: string, url: string): void;
+
+  abstract pushState(state: any, title: string, url: string): void;
+
+  abstract forward(): void;
+
+  abstract back(): void;
+}
 ```
