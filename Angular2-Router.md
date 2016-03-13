@@ -2,11 +2,17 @@
 Here is some note of Angular2 router.
 
 ### Agenda
+* [Structure](#structure)
+* [RouteConfig](#routeconfig)
+* [ROUTER_PROVIDERS](#router_providers)
+* [ROUTER_DIRECTIVES](#router_directives)
+* [Location](#location)
 
-
+### Structure
 In current version, Angular2 uses router to navigate from one view to the next.<br>
 Here is the structure of route in Angular2.
 ![RouterStructure](http://52.8.152.237/sean/wp-content/uploads/2016/03/router-1.png)
+
 ### RouteConfig
 Use RouteConfig to config route settings.
 ```
@@ -65,6 +71,7 @@ configFromComponent(component: any): void {
   }
 }
 ```
+
 ### ROUTER_PROVIDERS
 ROUTER_PROVIDERS gives a list of Providers. ROUTER_PROVIDERS must be included in the app or bootstrapped.<br>
 ```
@@ -91,6 +98,7 @@ export const ROUTER_PROVIDERS_COMMON: any[] = CONST_EXPR([
       {useFactory: routerPrimaryComponentFactory, deps: CONST_EXPR([ApplicationRef])}))
 ]);
 ```
+
 ### ROUTER_DIRECTIVES
 RouterLink and RouterOutlet are included in ROUTER_DIRECTIVES. RouterLink navigates user to the view while RouterOutlet shows the view in the page.<br>
 Use RouterLink in the following way.
@@ -106,6 +114,7 @@ RouteOutlet is used as a tag in views.
 ```
 RouteLink and RouteOutlet calls Router to generate an instruction.
 ![RouteDirectives](http://52.8.152.237/sean/wp-content/uploads/2016/03/routerDirectives.png)
+
 ### Location
 Location is a service that applications can use to interact with a browser's URL.
 ```
