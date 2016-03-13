@@ -14,8 +14,8 @@ This is a learning note of angular2 framework
   * [app/*.service.ts](#servicets)
 * [*NEW* Router](#router)
   * [RouteConfig](#routeconfig)
-  * [ROUTER_PROVIDERS](#routerproviders)
-  * [ROUTER_DIRECTIVES](#routerdirectives)
+  * [ROUTER_PROVIDERS](#router_providers)
+  * [ROUTER_DIRECTIVES](#router_directives)
   * [Location](#location)
 
 ### Structure
@@ -341,6 +341,7 @@ LocationStrategy represents route state. Angular2 provides two strategies: HashL
 * HashLocationStrategy: http://example.com#/foo
 * PathLocationStrategy: http://example.com/foo
 <br>
+
 Provide a provider to a string URL prefix in PathLocationStrategy.
 ```
 bootstrap(AppCmp, [
