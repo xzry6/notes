@@ -141,6 +141,7 @@ LocationStrategy represents route state. Angular2 provides two strategies: HashL
 * HashLocationStrategy: http://example.com#/foo
 * PathLocationStrategy: http://example.com/foo
 <br>
+<br>
 Several options are included in Location.
 ```
 /**
