@@ -12,7 +12,7 @@ This is a learning note of angular2 framework
   * [app/*.ts](#ts)
   * [app/*.component.ts](#componentts)
   * [app/*.service.ts](#servicets)
-* [*NEW* Router](#router)
+* [Router *(NEW!!!)*](#router)
   * [RouteConfig](#routeconfig)
   * [ROUTER_PROVIDERS](#router_providers)
   * [ROUTER_DIRECTIVES](#router_directives)
