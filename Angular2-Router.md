@@ -15,7 +15,7 @@ Here is the structure of route in Angular2.
 
 ### RouteConfig
 Use RouteConfig to config route settings.
-```
+```typescript
 import {RouteConfig, Route} from 'angular2/router';
  
 @RouteConfig([
@@ -27,14 +27,14 @@ class MyApp {}
 RouteConfig implements RouteDefinitin and then post these definitions to RouteRegistry.
 ![RouteConfig](http://52.8.152.237/sean/wp-content/uploads/2016/03/routerConfig.png)
 RouteConfig is an array of RouteDefinition(s).
-```
+```typescript
 @CONST()
 export class RouteConfig {
   constructor(public configs: RouteDefinition[]) {}
 }
 ```
 RouteDefinition interface in route_definition.ts
-```
+```typescript
 export interface RouteDefinition {
   path?: string;
   aux?: string;
@@ -50,7 +50,7 @@ export interface RouteDefinition {
 }
 ```
 RouteConfig configs RouteRegistry.
-```
+```typescript
 configFromComponent(component: any): void {
   if (!isType(component)) {
     return;
@@ -74,7 +74,7 @@ configFromComponent(component: any): void {
 
 ### ROUTER_PROVIDERS
 ROUTER_PROVIDERS gives a list of Providers. ROUTER_PROVIDERS must be included in the app or bootstrapped.<br>
-```
+```typescript
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {AppCmp} from './app.component';
 
@@ -82,7 +82,7 @@ bootstrap(AppCmp, [ROUTER_PROVIDERS]);
 ```
 ROUTER_PROVIDERS provides following settings.
 ![RouteProviders](http://52.8.152.237/sean/wp-content/uploads/2016/03/routerProviders.png)
-```
+```typescript
 export const ROUTER_PROVIDERS_COMMON: any[] = CONST_EXPR([
   RouteRegistry,
   CONST_EXPR(new Provider(LocationStrategy, {useClass: PathLocationStrategy})),
@@ -102,14 +102,14 @@ export const ROUTER_PROVIDERS_COMMON: any[] = CONST_EXPR([
 ### ROUTER_DIRECTIVES
 RouterLink and RouterOutlet are included in ROUTER_DIRECTIVES. RouterLink navigates user to the view while RouterOutlet shows the view in the page.<br>
 Use RouterLink in the following way.
-```
+```typescript
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 ```
-```
+```html
 <a [routerLink]="['./User']">link to user component</a>
 ```
 RouteOutlet is used as a tag in views.
-```
+```html
 <router-outlet></router-outlet>
 ```
 RouteLink and RouteOutlet calls Router to generate an instruction.
@@ -117,10 +117,10 @@ RouteLink and RouteOutlet calls Router to generate an instruction.
 
 ### Location
 Location is a service that applications can use to interact with a browser's URL.
-```
+```typescript
 import {Location} from 'angular2/router';
 ```
-```
+```typescript
 class AppCmp {
   constructor(location: Location) {
     location.go('/foo');
@@ -128,7 +128,7 @@ class AppCmp {
 }
 ```
 Location derives from LocationStrategy.
-```
+```typescript
 constructor(public platformStrategy: LocationStrategy) {
   var browserBaseHref = this.platformStrategy.getBaseHref();
   this._baseHref = stripTrailingSlash(stripIndexHtml(browserBaseHref));
@@ -143,7 +143,7 @@ LocationStrategy represents route state. Angular2 provides two strategies: HashL
 <br>
 <br>
 Several options are included in Location.
-```
+```typescript
 /**
    * Returns the normalized URL path.
    */
@@ -179,21 +179,21 @@ Several options are included in Location.
    */
 ````
 Provide a provider to a string URL prefix in PathLocationStrategy.
-```
+```typescript
 bootstrap(AppCmp, [
   ROUTER_PROVIDERS,
   provide(APP_BASE_HREF, {useValue: '/my/app'})
 ]);
 ```
 When using HashLocationStrategy.
-```
+```typescript
 bootstrap(AppCmp, [
   ROUTER_PROVIDERS,
   provide(LocationStrategy, {useClass: HashLocationStrategy})
 ]);
 ```
 LocationStrategy uses PlatformLocation to encapsulate calls to DOM apis. PlatformLocation has following structure.
-```
+```typescript
 export abstract class PlatformLocation {
   abstract getBaseHrefFromDOM(): string;
   abstract onPopState(fn: UrlChangeListener): void;
