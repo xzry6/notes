@@ -30,7 +30,7 @@ This is a learning note of angular2 framework
 ### Settings
 #### package.json
 Settings of npm, including name, version, script, dependencies, etc.
-```
+```javascript
 {
   "name": "angular2-quickstart",
   "version": "1.0.0",
@@ -62,7 +62,7 @@ Settings of npm, including name, version, script, dependencies, etc.
 ```
 #### tsconfig.json
 Settings of typescript, including compilierOptions, exclude, etc.
-```
+```javascript
 {
   "compilerOptions": {
     "target": "es5",
@@ -83,7 +83,7 @@ Settings of typescript, including compilierOptions, exclude, etc.
 ```
 #### typings.json
 Settings of type script definitions.
-```
+```javascript
 {
   "ambientDependencies": {
     "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2"
@@ -93,7 +93,7 @@ Settings of type script definitions.
 ### MVVM
 #### index.html
 When an angular2 app is started, index.html in main menu is loaded. In the index.html, please include introduced .css and .js file.
-```
+```html
 <link rel="stylesheet" href="styles.css">
 <script src="node_modules/es6-shim/es6-shim.min.js"></script>
 <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -105,7 +105,7 @@ When an angular2 app is started, index.html in main menu is loaded. In the index
 <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 ```
 Then configure SystemJS with main.ts file.
-```
+```html
 <script>
  System.config({
   packages: {
@@ -120,14 +120,14 @@ Then configure SystemJS with main.ts file.
  </script>
 ```
 Use a tag which is defined in one of your component's selector to display the page.
-```
+```html
 <body>
  <my-app>Loading</my-app>
 </body>
 ```
 #### main.ts
 main.ts is the main file called in index.html. Main component should be bootsrapped in main.ts.
-```
+```typescript
 import {bootstrap}            from 'angular2/platform/browser'
 import {AppComponent}         from './app.component'
 import {HeroDetailComponent}  from './hero-detail.component'
@@ -137,7 +137,7 @@ bootstrap(HeroDetailComponent);
 ```
 #### *.ts
 Create an interface or a model.
-```
+```typescript
 export interface Hero {
   id: number;
   name: string;
@@ -145,13 +145,13 @@ export interface Hero {
 ```
 #### *.component.ts
 Related components should be imported first.
-```
+```typescript
 import {Component}            from 'angular2/core';
 import {Hero}                 from './hero';
 import {HeroDetailComponent}  from './hero-detail.component';
 ```
 *.component.ts could be displayed as a component of a page by replacing a tag in index.html or other component with its content. 'selector' value in '@Component' defines the replaced tag. 'template' is the content page of replaced value. main component should be bootstrapped in main.ts.
-```
+```typescript
 @Component({
  selector: 'my-hero-detail',
  template: `    
@@ -166,7 +166,7 @@ import {HeroDetailComponent}  from './hero-detail.component';
 })
 ```
 The class in the *.component.ts is the model and controller of this view.
-```
+```typescript
 export class HeroDetailComponent {
   heroes = HEROES;
   selectedHero: Hero;
@@ -174,45 +174,45 @@ export class HeroDetailComponent {
 }
 ```
 Imported input should be listed.
-```
+```typescript
 inputs: ['hero']
 ```
 Imported component should be listed.
-```
+```typescript
 directives: [HeroDetailComponent]
 ```
 #### *.service.ts
 Service connects models and components.<br>
 Import 'Injectable' decorator in your service.
-```
+```typescript
 import {Injectable} from 'angular2/core';
 @Injectable()
 export class HeroService { }
 ```
 Import and provide your service in the component.
-```
+```typescript
 import {HeroService} from './hero.service';
 ```
-```
+```typescript
 @Component({
  providers: [HeroService]
 )}
 ```
 User a constructor to declare the service.
-```
+```typescript
 constructor(private _heroService: HeroService) { }
 ```
 Inject the service.
-```
+```typescript
 this.heroes = this._heroService.getHeroes();
 ```
 We can use Promise in service methods.
-```
+```typescript
 getHeroes() {
   return Promise.resolve(HEROES);
 }
 ```
 And inject service in this way.
-```
+```typescript
 this._heroService.getHeroes().then(heroes => this.heroes = heroes);
 ```
