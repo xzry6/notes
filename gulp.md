@@ -23,7 +23,7 @@ $ npm install --save-dev gulp
 ```
 
 - Configure gulpfile.js in root of project
-```
+```javascript
 var gulp = require('gulp');
 gulp.task('default', function() {
 
@@ -33,7 +33,7 @@ gulp.task('default', function() {
 ### API
 #### gulp.src
 Matching related files.
-```
+```javascript
 gulp.src(app/app.js); //matching app/app.js
 gulp.src(app/*.js); //matching all .js file in app directory
 gulp.src(app/**/*.js); //recursively matching all .js file in app folder
@@ -44,13 +44,13 @@ gulp.src(['client/*.js', '!client/b*.js', 'client/bad.js']);
 
 #### gulp.dest
 Write in directed folder.
-```
+```javascript
 gulp.dest('./build/minified_templates'); // write results to ./build/minified_templates
 ```
 
 #### gulp.task
 Execute task in defined order.
-```
+```javascript
 // execute task 'one' first
 gulp.task('one', function(cb) {
 });
@@ -65,7 +65,7 @@ gulp.task('default', ['one', 'two']);
 
 #### gulp.watch
 Watch files and do something when a file changes.
-```
+```javascript
 var watcher = gulp.watch('js/**/*.js', ['uglify','reload']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
