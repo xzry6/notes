@@ -26,13 +26,13 @@ This is a learning note of some useful commands
 ### Vim
 | Key | Description |
 | ----------- | ----------- |
-| `h/j/k/l` | </v/^/> |
-| `b/e` | Jump to the next/previous word |
-| `^\$` | Go to the beginning/end of a line |
+| `h / j / k / l` | \< / v / ^ / \> |
+| `b / e` | Jump to the next/previous word |
+| `^ \ $` | Go to the beginning/end of a line |
 | `fx` | Jump to next occurrence of character x |
-| `gg/G/5G`| Go to the first/last/5th line |
-| `{/}` | Jump to next/previous paragraph |
+| `gg / G / 5G`| Go to the first/last/5th line |
+| `{ / }` | Jump to next/previous paragraph |
 | `r` | Replace a single character |
-| `i/I/a/A/o/O` | Insert at wordBeginning/linBegining/wordEnd/lineEnde/nextLine/lastLine |
-| `v/ctrl+v/V` | Visual/VisualBlock/VisualLine |
-| `u/ctrl+r` | undo/redo |
+| `i / I / a / A / o / O` | Insert at wordBeginning/linBegining/wordEnd/lineEnde/nextLine/lastLine |
+| `v / ctrl+v / V` | Visual/VisualBlock/VisualLine |
+| `u / ctrl+r` | undo/redo |
