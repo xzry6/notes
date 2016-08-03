@@ -6,7 +6,7 @@ This is a learning note of some useful commands
 
 ### Terminal
 #### Shortcuts
-| Key/Command | Description |
+| Key | Description |
 | ----------- | ----------- |
 | `Ctrl + A`   | Go to the beginning |
 | `Ctrl + E`   | Go to the end |
@@ -14,6 +14,9 @@ This is a learning note of some useful commands
 | `Ctrl + U`   | Cut everything backwards |
 | `Ctrl + K`   | Cut everything forward |
 | `Ctrl + W`   | Cut one word backwards |
+
 #### Commands
+| Command | Description |
+| ----------- | ----------- |
 | `grep [-r] [search_pattern] [file]` | Search for all lines containing the pattern |
-| `sed [-i] "" "s/[original]/[replace]/g" `grep [original] -rl [fileName]``| Search and replace the content | 
+| ``sed [-i] "" "s/[original]/[replace]/g" `grep [original] -rl [fileName]` `` | Search and replace the content | 
