@@ -14,6 +14,7 @@ This is a learning note of angular2 framework
   * [app/*.service.ts](#servicets)
 * [Router *(NEW!!!)*](Angular2-Router.md)
 
+
 ### Structure
 * a regular angular2 app
   * app (main operation of app)
@@ -216,3 +217,4 @@ And inject service in this way.
 ```typescript
 this._heroService.getHeroes().then(heroes => this.heroes = heroes);
 ```
+
