@@ -4,4 +4,4 @@ Here are some learning notes of everything anything.
 - [command](command.md)
 - [gulp](gulp.md)
 - [monitoring](monitoring.md)
-
+- [tensorflow](tensorflow.md)
