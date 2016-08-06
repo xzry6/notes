@@ -7,7 +7,7 @@ This is a learning note of tensorflow.
 Reference: 
 - https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html#test-the-tensorflow-installation
 - https://github.com/tensorflow/tensorflow/issues/1402
-```
+```sh
 # TensorFlow Version: 0.10.0;
 # Installed System: Mac OS X El Capitan 10.11.5, CPU only;
 # Input the following commands in order;
