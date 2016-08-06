@@ -35,4 +35,5 @@ This is a learning note of some useful commands
 | `r` | Replace a single character |
 | `i / I / a / A / o / O` | Insert at wordBeginning/linBegining/wordEnd/lineEnde/nextLine/lastLine |
 | `v / ctrl+v / V` | Visual/VisualBlock/VisualLine |
-| `u / ctrl+r` | undo/redo |
+| `u / ctrl+r` | Undo/redo |
+| `zo / zc` | Unfold/fold |
