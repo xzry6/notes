@@ -1,7 +1,8 @@
 # Notes
 Here are some learning notes of everything anything.
-- [Angular2](Angular2.md)
+- [Angular2](nearby/Angular2.md)
 - [command](command.md)
-- [gulp](gulp.md)
-- [monitoring](monitoring.md)
-- [tensorflow](tensorflow.md)
+- [gulp](nearby/gulp.md)
+- [monitoring](nearby/monitoring.md)
+- [tensorflow](transwarp/tensorflow.md)
+
