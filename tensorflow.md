@@ -2,6 +2,7 @@
 This is a learning note of tensorflow.
 ### Agenda
 * [Installation(MacOSX)](#installation)
+* [Usage](#usage)
 
 ### Installation
 Reference: 
@@ -48,3 +49,15 @@ $ python setup.py develop
 $ cd tensorflow/models/image/mnist
 $ python convolutional.py
 ```
+
+### Usage
+#### Terms
+* Graphs: Computations are represented as graphs in tensorflow;
+* Ops: Nodes in graphs are called ops;
+* Tensors: A typed multi-dimensional array, could be used as inputs or produced as outputs in ops;
+* Sessions: Sessions place graph ops on devices, such as CPUs and GPUs, and provide methods to excute them;
+#### Process
+1. Build the graph;
+2. Launch in a session;
+
+
