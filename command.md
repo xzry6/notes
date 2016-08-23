@@ -10,6 +10,8 @@ This is a learning note of some useful commands
 | ----------- | ----------- |
 | `Ctrl + A` | Go to the beginning |
 | `Ctrl + E` | Go to the end |
+| `Esc + B` | Jump to the previous word |
+| `Esc + F` | Jump to the next word |
 | `Ctrl + L` | Clears the Screen |
 | `Ctrl + U` | Cut everything backwards |
 | `Ctrl + K` | Cut everything forward |
