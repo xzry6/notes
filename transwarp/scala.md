@@ -54,12 +54,14 @@ Scala is a <strong> pure object-oriented language </strong>. In Scala, <strong> 
 | `val` | Immutable variable | `Fields`, `Local Variables`, `Methods` |
 
 #### Access Modifier
-Access Modifiers in Scala are similar to ones in Java except for `default`.
+Access Modifiers in Scala are similar to ones in Java except for `default`. `default` is `public` in Scala.
+
 | Type | Scope |
 | ----- | ----- |
 | `private` | Only visible inside the class |
 | `protected` | Visible inside the class and subclasses |
 | `public` | Could be accessed anywhere |
+
 Scala also has scope of protection. See the following code.
 ```scala
 package society {
