@@ -5,5 +5,6 @@ Here are some learning notes of everything anything.
 - [command](command.md)
 - [gulp](nearby/gulp.md)
 - [monitoring](nearby/monitoring.md)
+- [scala](transwarp/scala.md)
 - [tensorflow](transwarp/tensorflow.md)
 
