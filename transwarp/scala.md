@@ -28,6 +28,7 @@ Scala is a <strong> pure object-oriented language </strong>. In Scala, <strong> 
 - Fields
 - Closure
 - Traits
+
 #### Data Types
 | Type | Bits | Range |
 | -------- | ------------ | -------------- |
@@ -37,12 +38,12 @@ Scala is a <strong> pure object-oriented language </strong>. In Scala, <strong> 
 | `Long` | 64bits |-2^63 ~ 2^63 |
 | `Float` | 32bits |
 | `Double` | 64bits |
-| `Char` | 16bits, U+0000 ~ U+FFFF |
-| `String` | | |
-| `Boolean` | True or False | |
-| `Unit` | No Value | |
-| `Null` | Null or empty reference | |
-| `Nothing` | Subtype of every other type, including no values | |
-| `Any` | Supertype of any type; any object is `Any` | |
-| `AnyRef` | Supertype of any reference type | |
+| `Char` | 16bits | U+0000 ~ U+FFFF |
+| `String` |
+| `Boolean` | | True or False |
+| `Unit` | | No Value |
+| `Null` | Null or empty reference |
+| `Nothing` | Subtype of every other type, including no values |
+| `Any` | Supertype of any type; any object is `Any` |
+| `AnyRef` | Supertype of any reference type |
 
