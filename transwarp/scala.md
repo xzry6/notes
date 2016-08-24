@@ -20,8 +20,8 @@ Scala is a <strong> pure object-oriented language </strong>. In Scala, <strong> 
   - Play
   - Bowler
 
-### Basic Syntax
-#### Concepts
+### Basic
+#### Syntax
 - Object
 - Class
 - Methods
@@ -46,4 +46,35 @@ Scala is a <strong> pure object-oriented language </strong>. In Scala, <strong> 
 | `Nothing` | Subtype of every other type, including no values |
 | `Any` | Supertype of any type; any object is `Any` |
 | `AnyRef` | Supertype of any reference type |
+
+#### Variable Declaration
+| Type | Feature | Scope |
+| ----- | ----- | ------ |
+| `var` | Mutable variable | `Fields`, `Local Variables` |
+| `val` | Immutable variable | `Fields`, `Local Variables`, `Methods` |
+
+#### Access Modifier
+Access Modifiers in Scala are similar to ones in Java except for `default`.
+| Type | Scope |
+| ----- | ----- |
+| `private` | Only visible inside the class |
+| `protected` | Visible inside the class and subclasses |
+| `public` | Could be accessed anywhere |
+Scala also has scope of protection. See the following code.
+```scala
+package society {
+   package professional {
+      class Executive {
+         private[professional] var workDetails = null
+         private[society] var friends = null
+         private[this] var secrets = null
+
+         def help(another : Executive) {
+            println(another.workDetails)
+            println(another.secrets) //ERROR
+         }
+      }
+   }
+}
+```
 
