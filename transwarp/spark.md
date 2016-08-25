@@ -14,7 +14,7 @@ Here is a learning note of Spark.
 ### Structure
 Spark applications run as independent sets of processes on a cluster. See the following figure of Spark cluster components.
 
-[!SparkClusterComponents](http://spark.apache.org/docs/latest/img/cluster-overview.png)
+![sparkClusterComponents](http://spark.apache.org/docs/latest/img/cluster-overview.png)
 
 Few tips of this architecture:
 1. Each Spark application runs seperately;
