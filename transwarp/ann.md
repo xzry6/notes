@@ -21,6 +21,10 @@
 #### 组合函数
 p = h(wx + b)
 
+$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
+
+$e^{i \pi} + 1 = 0$
+
 <img src="http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png" height="240">
 
 #### 激活函数
