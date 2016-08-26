@@ -13,32 +13,43 @@
 * [主流模型](#主流模型)
 
 ### 结构
+人工神经网络由一个输入可见层, 多个隐藏层和一个分类输出层组成. 每一层由不同数目的神经单元组成, 前后两层之间的weight和bias组成了整个模型.
+
 <img src="http://cs231n.github.io/assets/nn1/neural_net2.jpeg" height="240">
 
 ### 前向传播
+对人工神经网络进行训练时, 我们首先把输入放入输入可见层, *喂*进神经网络, 并逐层传递.
+
 <img src="http://ufldl.stanford.edu/tutorial/images/Network331.png" height="360">
 
 #### 组合函数
+每一层的神经单元由上一层的单元和权重生成.
 
-<img src="http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png" height="240">
+<img src="http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png" height="180">
 
 $p(x_j^2) = \sigma(\Sigma w_{ij}^{12}x_i^1)$
 
 #### 激活函数
-- Sigmoid: $\sigma(z) = {1 \over 1 + e^{-z}}$
-- Tanh: $\sigma(z) = {sinh(z) \over cosh(z)} = {(e^z - e^{-z}) \over (e^z + e^{-z})}$
+- Sigmoid: $\sigma(z) = {1 \over 1 + e^{-z}}
+- Tanh: $\sigma(z) = {sinh(z) \over cosh(z)} = {{e^z - e^{-z}} \over {e^z + e^{-z}}}$
 - ReLU: $\sigma(z) = max(0, z)$
 
 ### 反向传播
-<img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
+因为多层的结构, 当进行迭代更新的时候, 输出层产生的error会反向传遍整个网络.
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+<img src="http://i.stack.imgur.com/H1KsG.png" height="360">
+
+输出层的error就是分类器的error: $\delta_i^n = \sigma_i^n - y_i$
+前一层的error由后一层的error产生: $\delta_i^n = \Sigma_j w_{ij}^{n+1} \delta_j^{n+1}$
+更新权重使用梯度下降: %\Delta w_{ij} = -\gamma \sigma_i^n \delta_j^{n+1}$
+
+有兴趣的可以看一下**[R. Rojas: Neural Networks, Springer-Verlag, Berlin, 1996](https://page.mi.fu-berlin.de/rojas/neural/chapter/K7.pdf)**中关于反向传播的部分.
 
 ### 主流模型
 - 编码网络(AutoEncoder)
 - 深度玻尔兹曼机器(DBM)
-- 卷积神经网络(CNN)
-- 深度置信网(DBN)
-- 递归神经网络(RNN)
+- [卷积神经网络(CNN)](tanswarp/cnn.md)
+- [深度置信网(DBN)](transwarp/dbn.md)
+- [递归神经网络(RNN)](transwarp/rnn.md)
 
 
