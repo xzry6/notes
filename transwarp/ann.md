@@ -19,7 +19,7 @@
 <img src="http://ufldl.stanford.edu/tutorial/images/Network331.png" height="360">
 
 #### 组合函数
-$\p(l2) = \sigma(\w_12\x_1 \+ \b)$
+$\p(l2) = \sigma((w_{12})(x_1)+b)$
 
 $\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
 
