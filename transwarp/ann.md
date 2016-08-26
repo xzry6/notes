@@ -10,15 +10,15 @@
 * [主流模型](#主流模型)
 
 ### 结构
-![结构](http://cs231n.github.io/assets/nn1/neural_net2.jpeg)
-
+![结构](http://cs231n.github.io/assets/nn1/neural_net2.jpeg =250x)
+
 ### 前向传播
-![前向传播](http://ufldl.stanford.edu/tutorial/images/Network331.png)
+![前向传播](http://ufldl.stanford.edu/tutorial/images/Network331.png =250x)
 
 #### 组合函数
 p = h(wx + b)
 
-![组合函数](http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png)
+![组合函数](http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png =250x)
 
 #### 激活函数
 - Sigmoid: h(z) = 1 / (1 + e^-z)
