@@ -1,7 +1,7 @@
 <head>
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 </head>
-# Note: Artificil Neural Network
+# Note: Artificial Neural Network
 **人工神经网络**是受到了生物学上动物的中枢神经系统的启发而开发出来的一种计算模型.
 **人工神经网络**最早于20世纪40年代提出, 但由于庞大的神经网络和当时计算能力的局限, 神经网络的研究一直停滞不前.
 直到20世纪80年代**分散式并行处理**的流行和由*Paul Werbos*创造的反向传播算法, 神经网络渐渐又开始流行起来. 并于21世纪开始同**深度学习**一起成为机器学习领域的热点.
@@ -39,9 +39,9 @@ $p(x_j^2) = \sigma(\Sigma w_{ij}^{12}x_i^1)$
 
 <img src="http://i.stack.imgur.com/H1KsG.png" height="360">
 
-输出层的error就是分类器的error: $\delta_i^n = \sigma_i^n - y_i$
-前一层的error由后一层的error产生: $\delta_i^n = \Sigma_j w_{ij}^{n+1} \delta_j^{n+1}$
-更新权重使用梯度下降: %\Delta w_{ij} = -\gamma \sigma_i^n \delta_j^{n+1}$
+- 输出层的error就是分类器的error: $\delta_i^n = \sigma_i^n - y_i$
+- 前一层的error由后一层的error产生: $\delta_i^n = \Sigma_j w_{ij}^{n+1} \delta_j^{n+1}$
+- 更新权重使用梯度下降: $\Delta w_{ij} = -\gamma \sigma_i^n \delta_j^{n+1}$
 
 有兴趣的可以看一下**[R. Rojas: Neural Networks, Springer-Verlag, Berlin, 1996](https://page.mi.fu-berlin.de/rojas/neural/chapter/K7.pdf)**中关于反向传播的部分.
 
