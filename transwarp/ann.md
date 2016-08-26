@@ -1,4 +1,7 @@
-# Note: Artificial Neural Network
+<head>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+</head>
+# Note: Artificil Neural Network
 **人工神经网络**是受到了生物学上动物的中枢神经系统的启发而开发出来的一种计算模型.
 **人工神经网络**最早于20世纪40年代提出, 但由于庞大的神经网络和当时计算能力的局限, 神经网络的研究一直停滞不前.
 直到20世纪80年代**分散式并行处理**的流行和由*Paul Werbos*创造的反向传播算法, 神经网络渐渐又开始流行起来. 并于21世纪开始同**深度学习**一起成为机器学习领域的热点.
@@ -21,11 +24,14 @@ p = h(wx + b)
 <img src="http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png" height="240">
 
 #### 激活函数
-- Sigmoid: h(z) = 1 / (1 + e^-z)
+- Sigmoid: \\( 1/x^{2} \\)
+- ![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+
 - Tanh: h(z) = sinh(z) / cosh(z) = (e^z - e^-z) / (e^z + e^-z)
 - ReLU: h(z) = max(0, z)
 
 ### 反向传播
+
 
 ### 主流模型
 - 编码网络(AutoEncoder)
