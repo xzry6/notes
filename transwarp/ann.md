@@ -13,13 +13,17 @@
 ![结构](http://cs231n.github.io/assets/nn1/neural_net2.jpeg)
 
 ### 前向传播
+![前向传播](http://ufldl.stanford.edu/tutorial/images/Network331.png)
+
 #### 组合函数
-p = σ(wx + b)
+p = h(wx + b)
+
+![组合函数](http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png)
+
 #### 激活函数
-![激活函数](http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png)
-- Sigmoid: ![sigmoid](http://file.scirp.org/Html/htmlimages%5C10-9402081x%5C34ca7298-136f-4b25-a192-1e7f24401b53.png)
-- Tanh: ![tanh](http://folk.ntnu.no/oyvinbra/gdsp/images/tanh_formula.png)
-- ReLU: ![relu](http://wiki.ubc.ca/images/math/a/2/c/a2c0a83b286b4d0ca1a01d23cf2d8f79.png)
+- Sigmoid: h(z) = 1 / (1 + e^-z)
+- Tanh: h(z) = sinh(z) / cosh(z) = (e^z - e^-z) / (e^z + e^-z)
+- ReLU: h(z) = max(0, z)
 
 ### 反向传播
 
