@@ -25,13 +25,15 @@ p = h(wx + b)
 
 #### 激活函数
 - Sigmoid: \\( 1/x^{2} \\)
-- ![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+- 
 
 - Tanh: h(z) = sinh(z) / cosh(z) = (e^z - e^-z) / (e^z + e^-z)
 - ReLU: h(z) = max(0, z)
 
 ### 反向传播
+<img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
 
+![equation](http://www.sciweavers.org/tex2img.php?eq=1%2Bsin%28mc%5E2%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
 
 ### 主流模型
 - 编码网络(AutoEncoder)
