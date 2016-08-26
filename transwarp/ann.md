@@ -51,6 +51,6 @@
 - 编码网络(AutoEncoder)
 - 深度玻尔兹曼机器(DBM)
 - [卷积神经网络(CNN)](cnn.md)
-- 深度置信网(DBN
+- 深度置信网(DBN)
 - [递归神经网络(RNN)](rnn.md)
 
