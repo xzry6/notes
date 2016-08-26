@@ -19,20 +19,15 @@
 <img src="http://ufldl.stanford.edu/tutorial/images/Network331.png" height="360">
 
 #### 组合函数
-$p(x_j^2) = \sigma(\Sigma w_{ij}^{12}x_i^1)$
-
-$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
-
-$e^{i \pi} + 1 = 0$
 
 <img src="http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png" height="240">
 
-#### 激活函数
-- Sigmoid: \\( 1/x^{2} \\)
-- 
+$p(x_j^2) = \sigma(\Sigma w_{ij}^{12}x_i^1)$
 
-- Tanh: h(z) = sinh(z) / cosh(z) = (e^z - e^-z) / (e^z + e^-z)
-- ReLU: h(z) = max(0, z)
+#### 激活函数
+- Sigmoid: $\sigma(z) = 1 \over 1 + e^{-z}$
+- Tanh: $\sigma(z) = sinh(z) \over cosh(z) = (e^z - e^{-z}) \over (e^z + e^{-z})
+- ReLU: $\sigma(z) = max(0, z)$
 
 ### 反向传播
 <img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
