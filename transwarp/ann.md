@@ -25,8 +25,8 @@
 $p(x_j^2) = \sigma(\Sigma w_{ij}^{12}x_i^1)$
 
 #### 激活函数
-- Sigmoid: $\sigma(z) = (1 \over 1 + e^{-z})$
-- Tanh: $\sigma(z) = (sinh(z) \over cosh(z)) = ((e^z - e^{-z}) \over (e^z + e^{-z}))$
+- Sigmoid: $\sigma(z) = {1 \over 1 + e^{-z}}$
+- Tanh: $\sigma(z) = {sinh(z) \over cosh(z)} = {(e^z - e^{-z}) \over (e^z + e^{-z})}$
 - ReLU: $\sigma(z) = max(0, z)$
 
 ### 反向传播
