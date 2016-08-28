@@ -3,6 +3,7 @@ This is a learning note of tensorflow.
 ### Agenda
 * [Installation(MacOSX)](#installation)
 * [Usage](#usage)
+* [Implementation](#implementation)
 
 ### Installation
 Reference: 
@@ -53,11 +54,29 @@ $ python convolutional.py
 ### Usage
 #### Terms
 * Graphs: Computations are represented as graphs in tensorflow;
+  - Normal edges: Tensors;
+  - Special edges: Control Dependencies;
+    - Add dependencies to independent states;
+    - Control the peak memory usage;
 * Ops: Nodes in graphs are called ops;
-* Tensors: A typed multi-dimensional array, could be used as inputs or produced as outputs in ops;
+  - Attributes: An op can have attributes;
+    - Must be provided at construction time;
+    - Can be used to make ops polymorphic;
+  - Kernels: Particular implementations of ops than can be run on a particular type of device;
+  - Variables: A special type of op that survives throughout the execution, typically a parameter is held as a variable;
+* Tensors: a typed multi-dimensional array, could be used as inputs or produced as outputs in ops;
 * Sessions: Sessions place graph ops on devices, such as CPUs and GPUs, and provide methods to excute them;
-#### Process
-1. Build the graph;
-2. Launch in a session;
+  - Use *Extend* method to add nodes and edges;
+  - Use *Run* method to compute the output which were requested;
 
-
+### Implementation
+- Single-Device: Having dependencies' counter, a node would be executed once the dependency counter drops to 0;
+- Multi-Device: 
+  - Distribute the workload;
+    - Use a greedy heuristic;
+  - Communicate with the devices;
+    - Add *Send* and *Receive* nodes;
+    - Canonicalize all interfaces receiving the same tensor to a single interface;
+- Fault Tolerance: 
+  - An error in a communication between a *Send* and *Receive* pair;
+  - Periodic health-checks from the master process to every worker process;
