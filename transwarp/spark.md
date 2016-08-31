@@ -31,3 +31,4 @@ Spark contains following main components:
 - GraphX: Parallel processing API for graph computing;
 
 ### RDD
+A **Resilient Distributed Dataset(RDD)** is the *basic abstraction* in Spark, representing an *immutable*, *partitioned* collection of elements that can be operated on in parellel. See [this paper](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf) for more information.
