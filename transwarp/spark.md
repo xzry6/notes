@@ -55,7 +55,17 @@ Benefits of RDD structure include:
 - Mitigating slow notes by running backup copies of slow tasks;
 - Degrading gracefully when there is not enough memory to store them;
 
+#### Dependencies between RDDs
+There are two kind of dependencies between RDDs and parent RDDs,
+- *Narrow Dependency* means the parent RDD are used at most by one son RDD.
+- *Wide Dependency* means the parent RDD can be depended by several son RDDs.
 
+<img src="http://img.blog.csdn.net/20160806104849595" height="240">
+
+#### Fault Tolerence
+1. Check Cache;
+2. Check checkpoint;
+3. Lineage compute chain;
 
 ### Cheat Sheet
 Here are some example code of anything everything in *Scala*.
