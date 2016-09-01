@@ -8,7 +8,8 @@ Here is a learning note of Spark.
 ### Agenda
 * [Structure](#structure)
 * [Components](#components)
-* [RDD](#rdd)
+* [RDD(under construction!!)](#rdd)
+* [Cheat Sheet(under construction!!)](#cheatsheet)
 
 
 ### Structure
@@ -32,3 +33,15 @@ Spark contains following main components:
 
 ### RDD
 A **Resilient Distributed Dataset(RDD)** is the *basic abstraction* in Spark, representing an *immutable*, *partitioned* collection of elements that can be operated on in parellel. See [this paper](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf) for more information.
+
+### Cheat Sheet
+Here are some example code of anything everything in *Scala*.
+```scala
+// DataFrame
+dataset.select(c).show() // show selected column
+dataset.printSchema() // show schema
+
+// String interpolation
+val name = "James"
+println(s"Hello, $name")  // Hello, James
+```
