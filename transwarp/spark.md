@@ -34,6 +34,29 @@ Spark contains following main components:
 ### RDD
 A **Resilient Distributed Dataset(RDD)** is the *basic abstraction* in Spark, representing an *immutable*, *partitioned* collection of elements that can be operated on in parellel. See [this paper](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf) for more information.
 
+#### Featues of RDD
+An RDD is consisted of the following 5 parts:
+- A *partition* is a basic unit of RDD. *Partition* could be initialized when an RDD is created. *BlockManager* is respddatasetatasetonsible for distributing *patitions*. *Partitions* are mapped as *Blocks*, which will be calculated by *Tasks* by then;
+- A *compute* function;
+- Dependencies of RDDs relating to current RDD;
+- A *partitioner* calculating partitions;
+- A *table* storing *preferred location* and *priority* of every partition;
+
+#### Create an RDD
+An RDD is a *read-only*, *partitioned* collection of records.
+RDDs are only allowed to created from:
+- Data in storage;
+- Other RDDs;
+
+#### Advantages of RDDs
+The main difference of RDD and DSM(Distributed Shared Memory) is that RDDs can only be created by *coarse-grained transformations*, while DSMs allow transformations happening everywhere.
+Benefits of RDD structure include:
+- Allowing for more efficient fault tolerance;
+- Mitigating slow notes by running backup copies of slow tasks;
+- Degrading gracefully when there is not enough memory to store them;
+
+
+
 ### Cheat Sheet
 Here are some example code of anything everything in *Scala*.
 ```scala
