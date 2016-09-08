@@ -30,10 +30,12 @@ $p(v_i=1 | h) = \sigma(a_i + \Sigma_j h_j w_{ij})$  (eq.1)
 $p(h_j=1 | v) = \sigma(b_j + \Sigma_i v_i w_{ij})$  (eq.2)
 <br>
 <br>
+<br>
 在这里$\sigma$一般取sigmoid函数：
 <br>
 <br>
 $\sigma(z) = {1 \over 1 + e^{-z}}$
+<br>
 <br>
 <br>
 此时RBM的所有组合配置能量被定义为：
@@ -42,10 +44,12 @@ $\sigma(z) = {1 \over 1 + e^{-z}}$
 $E(v, h) = -\Sigma_i a_i v_i - \Sigma_j b_j h_j - \Sigma_{i, j} v_i h_j w_{ij}$
 <br>
 <br>
+<br>
 那么，每一组配置组合出现的概率就是：
 <br>
 <br>
 $p(v, h) = { e^{-E(v, h)} \over Z }$
+<br>
 <br>
 <br>
 在这里，Z是：
@@ -54,14 +58,17 @@ $p(v, h) = { e^{-E(v, h)} \over Z }$
 $Z = \Sigma_{v, h} e^{-E(v, h)}$
 <br>
 <br>
+<br>
 至此，RBM的训练意义被定义为*调整权重以使得显层出现的概率最大化*(即通过多次来回传递后使显层更符合原数据)，那显层的概率p(v)就是：
 <br>
 <br>
 $p(v) = {1 \over Z} \Sigma_h e^{-E(v, h)}$
 <br>
 <br>
+<br>
 最后我们得到梯度：
-$\delta w_{ij} = \epsilon <v^0_i h^0_j> - <v^\infty_i h^\infty_j>$
+$\delta w_{ij} = \epsilon \<v^0_i h^0_j\> \<v^\infty_i h^\infty_j\>$
+<br>
 <br>
 <br>
 在以上等式中，我们唯一不知道的是$v^\infty$和$h^\infty$，为了得到这两个值，我们可以使用十分耗时的吉布斯抽样(Gibbs Sampling)不停重复显层和隐层的激活函数直到聚合。这里我们使用一种对比散度方法(Contrasive Divergence)。对比散度使用了一个小技巧，即把输入当作$v^0$输入，这样一般进行一次计算就能达到聚合，被称作(CD-1)。
