@@ -98,5 +98,4 @@ The unsupervised CD algorithm can be used to pre-train all the RBM layers in a D
 
 <br>
 ## 深度置信网在生物信息学中的应用
-我们直到，一个蛋白质序列由一组氨基酸组成。这个[课题](http://52.8.152.237/sean/wp-content/uploads/2016/05/DNpro-A-Deep-Learning-Network-
-Approach-to-Predicting-Protein-Stability-Changes-Induced-by-Single-Site-Mutations.pdf)研究的是当每个氨基酸发生突变时，对蛋白质整体能量的变化。
+我们直到，一个蛋白质序列由一组氨基酸组成。这个[课题](http://52.8.152.237/sean/wp-content/uploads/2016/05/DNpro-A-Deep-Learning-Network-Approach-to-Predicting-Protein-Stability-Changes-Induced-by-Single-Site-Mutations.pdf)研究的是当每个氨基酸发生突变时，对蛋白质整体能量的变化。
