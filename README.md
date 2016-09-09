@@ -1,4 +1,5 @@
 # Notes
+###### For better Mathjax function experience, please install [Github with Mathjax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima) in *Chrome*.
 Here are some learning notes of everything anything.
 - Algorithms
   - [ANN](transwarp/ann.md)
