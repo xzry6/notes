@@ -77,6 +77,8 @@ $ python convolutional.py
   - Communicate with the devices;
     - Add *Send* and *Receive* nodes;
     - Canonicalize all interfaces receiving the same tensor to a single interface;
-- Fault Tolerance: 
-  - An error in a communication between a *Send* and *Receive* pair;
-  - Periodic health-checks from the master process to every worker process;
+- Distributed Execution:
+  - Similar to multi-device execution;
+  - Fault Tolerance: 
+    - An error in a communication between a *Send* and *Receive* pair;
+    - Periodic health-checks from the master process to every worker process;
